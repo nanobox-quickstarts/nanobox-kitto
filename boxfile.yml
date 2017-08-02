@@ -5,6 +5,10 @@ run.config:
   extra_packages:
     - nodejs
     - inotify-tools
+  extra_steps:
+    - npm install
+  cache_dirs:
+    - node_modules
 
   fs_watch: true
 
