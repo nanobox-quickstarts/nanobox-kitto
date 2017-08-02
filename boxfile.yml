@@ -1,0 +1,20 @@
+run.config:
+  engine: elixir
+  dev_packages:
+    - python-2.7.13nb1
+  extra_packages:
+    - nodejs
+    - inotify-tools
+
+  fs_watch: true
+
+#
+deploy.config:
+  extra_steps:
+    - npm run build
+  transform:
+    - mix compile --force
+
+#
+web.main:
+  start: mix kitto.server
